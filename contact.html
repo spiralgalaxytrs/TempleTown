@@ -193,26 +193,27 @@
 	 <form class="contact-form">
 		  	<div class="form-group">
 		 	<span>Full Name</span>
-				<input type="text"></input>
+				<input id="name" type="text"></input>
 		 </div>
 		 <!-- end form-group -->
 		  	<div class="form-group">
 		 	<span>Your E-mail</span>
-				<input type="text"></input>
+				<input id="email" type="text"></input>
 		 </div>
 		 <!-- end form-group -->
 		  	<div class="form-group">
-		 	<span>Subject</span>
-				<input type="text"></input>
+		 	<span>Mobile</span>
+				<input id="mobile" type="text"></input>
 		 </div>
 		 <!-- end form-group -->
 		  	<div class="form-group">
 		 	<span>Your Message</span>
-				<textarea></textarea>
+				<textarea id="message"></textarea>
 		 </div>
+     <p id="result"></p>
 		 <!-- end form-group -->
-		  	<div class="form-group">
-		 	<input type="submit" value="Send Now">
+     <div class="form-group">
+       <button id="submit"  type="button" onclick="sendMail()">Submit</button>
 		 </div>
 		 <!-- end form-group -->
 		  </form>
@@ -355,6 +356,7 @@
   <i class="fa-brands fa-whatsapp my-float"></i>
 </a>
 <!-- JS FILES --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/jquery.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/swiper.min.js"></script> 
@@ -362,5 +364,28 @@
 <script src="js/odometer.min.js"></script> 
 <script src="js/isotope.min.js"></script> 
 <script src="js/scripts.js"></script>
+<script>
+const sendMail=async()=>{
+var name = document.getElementById('name').value;
+var email = document.getElementById('email').value;
+var mobile = document.getElementById('mobile').value;
+var message= document.getElementById('message').value
+const result = await axios({
+  method: 'post',
+  url: 'http://144.126.253.144/contact-us',
+  data: {
+    name: name,
+    email: email,
+    phone:mobile,
+    message:message
+  }
+});
+console.log(result.data);
+document.getElementById('result').innerHTML=result.data.message
+    }
+</script>
+
+
+
 </body>
 </html>
