@@ -4002,3 +4002,18 @@ min-height: 95%;
 z-index: -1;
 
 }
+
+@media (max-width: 365px) {
+  
+  #myVideo {
+    position: absolute;
+  right: 0;
+  bottom: -122px;
+  min-width: 100%; 
+  min-height: 95%;
+  z-index: -1;
+  
+  }
+
+
+}
