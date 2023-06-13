@@ -58,14 +58,14 @@
   letter-spacing: 1px;
   line-height: 1.2;
   text-align: center;
-      color: #000;
+      color: #8bc349;;
   font-family: 'Roboto', sans-serif;
       
       background: rgba(255, 255, 255, 0.29);
   }
   
   .hero h2 span{
-      color: #ff6a00;
+    color: #006837;
       letter-spacing: -1px;
   }
   
