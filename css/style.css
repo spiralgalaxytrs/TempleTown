@@ -3993,3 +3993,27 @@ input::-moz-focus-inner, input::-moz-focus-outer {
   cursor: pointer;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 }
+#myVideo {
+  position: absolute;
+right: 0;
+bottom: 0px;
+min-width: 100%; 
+min-height: 95%;
+z-index: -1;
+
+}
+
+@media (max-width: 365px) {
+  
+  #myVideo {
+    position: absolute;
+  right: 0;
+  bottom: -122px;
+  min-width: 100%; 
+  min-height: 95%;
+  z-index: -1;
+  
+  }
+
+
+}
